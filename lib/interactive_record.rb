@@ -60,7 +60,7 @@ class InteractiveRecord
     #the code above is necessary to format variable 'value' into single quotes
     #since SQL only interprets information through single quotes.
     sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_hash.keys.first} = #{formatted_value}"
-
+    DB[:conn].execute(sql)
   end
 
 
